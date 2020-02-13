@@ -74,7 +74,9 @@ function addMember() {
                     }
                 ]).then(answers2 => {
                     console.log(answers2);
-                    // create engineer
+                    var engineer = new Engineer(answers.Name, answers.Title, answers.ID, answers.Email, answers2.GitHubUserName)
+                    employees.push(engineer)
+                    start();
                 })
             } else if (answers.Title == "Intern") {
                 inquirer.prompt([
@@ -85,7 +87,9 @@ function addMember() {
                     }
                 ]).then(answers2 => {
                     console.log(answers2);
-                    // create the Intern
+                    var intern = new Intern(answers.Name, answers.Title, answers.School)
+                    employees.push(intern)
+                    start();
                 })
             }
         });
